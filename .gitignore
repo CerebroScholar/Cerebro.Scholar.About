@@ -1,0 +1,9 @@
+.sass-cache/
+*.css.map
+.git/
+node_modules/*
+
+.idea/*
+.cache/*
+**/build/**/*
+dist/*
