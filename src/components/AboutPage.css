@@ -9,6 +9,45 @@ html, body {
   font-family: Raleway, sans-serif;
 }
 
+.about-logo{
+  /*width: 70%;*/
+  margin-top : -9.00rem;
+  width: 59rem;
+  /*margin-bottom: 1rem;*/
+}
+.logo-subtitle{
+  font-size: 2.5rem;
+}
+
+.about-navbar {
+  overflow: hidden;
+}
+
+.about-navbar a {
+  float: right;
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.about-navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.about-navbar a.active {
+  /*color: black;*/
+}
+
+.about-sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 article.slide {
   width: 100vw;
   height: 100vh;
@@ -26,17 +65,18 @@ article.first {
     
 }
 
-/*article.first img.logo {
-  width: 50%;
-  margin-bottom: 1.25rem;
-}*/
 
 article.first p {  
     color: #666;
-    font-size: 1.2rem;  
+    font-size: 1.5rem;  
     margin: 0 0 0 0;
 }
 
+.imgs-light{
+  margin-top: -90px;
+  width:250px;
+  height: 250px;
+}
 article.second {
   display: flex;
   flex-direction: column;
@@ -48,16 +88,11 @@ article.second {
 article.second p {
     color: #666;
     margin-top:0px;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     line-height: 3.0rem;
     text-align: center;
 }
 
-.imgs{
-  margin-top: -30px;
-  width:200px;
-  height: 200px;
-}
 
 .lineimg{
   margin-top: -30px;

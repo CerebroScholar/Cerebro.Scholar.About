@@ -1,6 +1,5 @@
 import React, { Component }  from 'react';
 import './AboutPage.css';
-import logoimg from '../imgs/logo.svg';
 import lightimg from '../imgs/light.png';
 import incline from '../imgs/increasing-line-orange.svg';
 import tagscluster from '../imgs/keyword-research.jpg';
@@ -13,8 +12,9 @@ class AboutPage extends Component{
 			'baseurl' : window.location.href,
 			'curslide' : 1,
 			'preslide' : 1
-		}
+		};
 	};
+
 	s1 = () =>{
 		const cur= 1, pre = this.state.curslide;
 		this.setState({curslide:cur, preslide:pre});
@@ -38,25 +38,54 @@ class AboutPage extends Component{
 		this.setState({curslide:cur, preslide:pre});
 	};
 
-	set_selected = () =>{
-		document.getElementById("li"+this.state.preslide).classList.remove("selected");
-		document.getElementById("li"+this.state.curslide).classList.add("selected");
-		window.location.href = this.state.baseurl.split("#")[0] + "#" +this.state.curslide;
-	}
+	set_selected = (linkmove) =>{
+		// document.getElementById("li"+this.state.preslide).classList.remove("selected");
+		// document.getElementById("li"+this.state.curslide).classList.add("selected");
+		if(linkmove)
+			window.location.href = this.state.baseurl.split("#")[0] + "#" +this.state.curslide;
+	};
+
 
 	componentDidMount() {
 		console.log('componentdidmount');
-	}
+		const sY = 771, halfsY = 771/3;		
+		var all_clear = function(){
+			document.getElementById("li1").classList.remove("selected");
+			document.getElementById("li2").classList.remove("selected");
+			document.getElementById("li3").classList.remove("selected");
+			document.getElementById("li4").classList.remove("selected");
+			document.getElementById("li5").classList.remove("selected");
+		};
+
+		window.onscroll = function(ev) {
+			if (window.scrollY < halfsY){
+				all_clear();
+				document.getElementById("li1").classList.add("selected");
+			}else if(1*sY <= window.scrollY && window.scrollY < 1*sY + halfsY ){
+				all_clear();
+				document.getElementById("li2").classList.add("selected");
+			}else if(2*sY <= window.scrollY && window.scrollY < 2*sY + halfsY){
+				all_clear();
+				document.getElementById("li3").classList.add("selected");
+			}else if(3*sY <= window.scrollY && window.scrollY < 3*sY + halfsY){
+				all_clear();
+				document.getElementById("li4").classList.add("selected");
+			}else if(4*sY <= window.scrollY && window.scrollY < 4*sY + halfsY){
+				all_clear();
+				document.getElementById("li5").classList.add("selected");
+			}
+		};
+	};
 
 	shouldComponentUpdate(){
 		console.log("shouldComponentUpdate");
 		return true;
-	}
+	};
 
 	componentDidUpdate(){
 		console.log("componentDidUpdate");
-		this.set_selected();
-	}
+		this.set_selected(true);
+	};
 
 	render() {
 		const s1 = this.s1, s2 = this.s2, s3 = this.s3, s4 = this.s4, s5 = this.s5;
@@ -72,9 +101,14 @@ class AboutPage extends Component{
 		                {/*<li className="stepper-navigation"><a href="#fifth">5</a></li>*/}
 		            </ul>
 		        </nav>
-
+		        <div className="about-navbar about-sticky">
+				  <a href="https://master.cerebroscholar.com">Skip</a>
+				</div>
 		        <article className="slide first" id="1">
-		            <img src={logoimg} alt="Cerebro Scholar logo" className="logo" />
+		            <h1>
+		            	<img src="https://static.cerebroscholar.com/logo.svg" alt="Cerebro Scholar logo" className="about-logo" />
+		            </h1>
+		            <h2 className='logo-subtitle'>Academic Trend Analytics Service</h2>
 		            <p>
 		                Discover trends in scientific research easily.
 		            </p>
@@ -84,7 +118,7 @@ class AboutPage extends Component{
 		        </article>
 
 		        <article className="slide second" id="2">
-		        	<img src={lightimg} alt='insight' className="imgs" />
+		        	<img src={lightimg} alt='insight' className="imgs-light" />
 		            <p>
 		                We provide <b className="highlight">insights</b> of scientific research<br />
 		                to make your research efficient<br />		                
@@ -102,8 +136,8 @@ class AboutPage extends Component{
 		        <article className="slide fourth" id="4">
 		        	<img src={tagscluster} alt='tagscluster' className="keywordsimgs" />
 		            <p>
-		                Cerebro Scholar is the <b className="highlight">Scholar Trend Analysis Service</b> <br />
-		                based on tags set that representing keywords of papers<br />		                
+		                Cerebro Scholar is the <b className="highlight">Academic Trend Analytics Service</b> <br />
+		                based on tags representing a keyword of paper<br />		                
 		            </p>
 		        </article>
 		        <article className="slide fifth" id="5">
