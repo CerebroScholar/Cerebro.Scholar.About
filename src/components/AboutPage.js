@@ -110,17 +110,17 @@ class AboutPage extends Component{
 		            </h1>
 		            <h2 className='logo-subtitle'>Academic Trend Analytics Service</h2>
 		            <p>
-		                Discover trends in scientific research easily.
+		                Discover trends in the scientific research.
 		            </p>
 		            <p>
-		            	Make it fast, make it visible!
+		            	EASY, FAST, VISIBLE !
 		            </p>
 		        </article>
 
 		        <article className="slide second" id="2">
 		        	<img src={lightimg} alt='insight' className="imgs-light" />
 		            <p>
-		                We provide <b className="highlight">insights</b> of scientific research<br />
+		                We provide <b className="highlight">insights</b> for a scientific research<br />
 		                to make your research efficient<br />		                
 		            </p>
 		        </article>
@@ -128,8 +128,8 @@ class AboutPage extends Component{
 		        <article className="slide third" id="3">
 		        	<img src={incline} alt='line' className='lineimg' />
 		            <p>
-		                Nowadays, there are so many papers newly published. <br />
-		                It is <b className="highlight">impossible to follow up</b> all the areas that you want to contribute.
+		                There are so many papers published each year. <br />
+		                It is <b className="highlight">impossible to follow up</b> with all the papers even in one area.
 		            </p>
 		        </article>
 
@@ -137,13 +137,13 @@ class AboutPage extends Component{
 		        	<img src={tagscluster} alt='tagscluster' className="keywordsimgs" />
 		            <p>
 		                Cerebro Scholar is the <b className="highlight">Academic Trend Analytics Service</b> <br />
-		                based on tags representing a keyword of paper<br />		                
+		                based on keywords of paper<br />		                
 		            </p>
 		        </article>
 		        <article className="slide fifth" id="5">
 		            <p>
-		                Also, Cerebro is working hard at this time. <br />
-		                <a href="https://master.cerebroscholar.com">Hey, Let's join us!</a>
+		                Use <b className="highlight">Cerebro.Scholar</b> to get an insight!<br />
+		                <a href="https://master.cerebroscholar.com">Join Cerebro.Scholar!</a>
 		            </p>
 		        </article>
 	        </div>
